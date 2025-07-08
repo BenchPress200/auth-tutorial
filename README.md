@@ -130,6 +130,15 @@ sequenceDiagram
   ```json
   HTTP Body
   {
+    "status": 409,
+    "message": "Duplicated name",
+    "data": null,
+    "timestamp": "yyyy-mm-ddThh:mm:ssZ"
+  }
+  ```
+  ```json
+  HTTP Body
+  {
     "status": 500,
     "message": "Server error",
     "data": null,
