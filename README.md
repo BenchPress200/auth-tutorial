@@ -52,6 +52,7 @@ sequenceDiagram
   participant Oauth2 API Server
 ```
 
+<br>
 
 ### ```회원정보 조회```
 ```mermaid
@@ -97,8 +98,6 @@ sequenceDiagram
 | 회원정보 요청 | GET | /api/v1/users/{userId} |
 
 <br>
-
-### 요청 & 응답 JSON
 
 **회원가입 - [POST] ```/api/v1/users```**
 - 요청<br>
