@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: auth-tutorial-backend
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/auth_tutorial
+    username: root
+    password: 1234

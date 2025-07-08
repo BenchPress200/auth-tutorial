@@ -94,7 +94,7 @@ sequenceDiagram
 | 회원가입 | POST | /api/v1/users |
 | 로그인 | POST | /api/v1/auth/login |
 | 로그아웃 | POST | /api/v1/auth/logout |
-| 본인 아이디 요청 | GET | /api/v1/auth/whoami |
+| 본인 아이디 조회 | GET | /api/v1/auth/whoami |
 | 회원정보 요청 | GET | /api/v1/users/{userId} |
 
 <br>
@@ -219,7 +219,7 @@ sequenceDiagram
 
 <br>
 
-**본인 아이디 요청 - [GET] ```/api/v1/auth/whoami```**
+**본인 아이디 조회 - [GET] ```/api/v1/auth/whoami```**
 - 요청
   ```json
   HTTP Header
@@ -255,7 +255,7 @@ sequenceDiagram
 
 <br>
 
-**회원정보 요청 - [GET] ```/api/v1/users/{userId}```**
+**회원정보 조회 - [GET] ```/api/v1/users/{userId}```**
 - 요청
   ```json
   HTTP Header
