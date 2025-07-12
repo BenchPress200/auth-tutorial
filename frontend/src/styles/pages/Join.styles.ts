@@ -12,7 +12,7 @@ export const Container = styled.div`
     align-items: center;
 `
 
-export const LoginBox = styled.div`
+export const JoinBox = styled.div`
     width: 400px;
     padding: 25px;
 
@@ -79,10 +79,10 @@ export const ButtonBox = styled.div`
     gap: 10px;
 `
 
-export const LoginButton = styled.button`
+export const JoinButton = styled.button`
     width: 100%;
     padding: 10px;
-    background-color: #3b82f6;
+    background-color: #28a745;
     color: white;
     border: none;
 
@@ -94,7 +94,7 @@ export const LoginButton = styled.button`
     transition: background-color 0.2s;
 
     &:hover {
-        background-color: #2563eb;
+        background-color: #218838;
     }
 
     &:active {
@@ -102,30 +102,7 @@ export const LoginButton = styled.button`
     }
 `
 
-export const KakaoButton = styled.button`
-    width: 100%;
-    padding: 10px;
-    background-color: #fee500;
-    color: #000;
-    border: none;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-        background-color: #fde047;
-    }
-
-    &:active {
-        transform: translateY(1px);
-    }
-`
-
-export const JoinButton = styled.button`
+export const LoginButton = styled.button`
     width: 100%;
     padding: 10px;
     background-color: transparent;

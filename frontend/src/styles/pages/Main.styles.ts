@@ -12,7 +12,7 @@ export const Container = styled.div`
     align-items: center;
 `
 
-export const LoginBox = styled.div`
+export const ContentBox = styled.div`
     width: 400px;
     padding: 25px;
 
@@ -27,45 +27,17 @@ export const LoginBox = styled.div`
     box-sizing: border-box;
 `
 
-export const Title = styled.h1`
-    margin: 0;
-
-    font-size: 32px;
-    font-weight: 700;
-    color: black;
-`
-
-export const InputForm = styled.div`
-    margin-top: 40px;
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    gap: 10px;
-`
-
-export const Input = styled.input`
+export const ResponseBox = styled.div`
     width: calc(100% - 20px);
     padding: 10px;
 
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    transition: border-color 0.2s;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
 
+    color: rgba(0, 0, 0, 0.5);
     font-size: 16px;
+    font-weight: 600;
     line-height: 17px;
-
-    &:focus {
-        outline: none;
-        border-color: #3b82f6;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-    }
-
-    &::placeholder {
-        color: #9ca3af;
-    }
 `
 
 export const ButtonBox = styled.div`
@@ -79,10 +51,10 @@ export const ButtonBox = styled.div`
     gap: 10px;
 `
 
-export const LoginButton = styled.button`
+export const UserDetailsFetchButton = styled.button`
     width: 100%;
     padding: 10px;
-    background-color: #3b82f6;
+    background-color: #3b82f6;;
     color: white;
     border: none;
 
@@ -102,11 +74,12 @@ export const LoginButton = styled.button`
     }
 `
 
-export const KakaoButton = styled.button`
+
+export const LogoutButton = styled.button`
     width: 100%;
     padding: 10px;
-    background-color: #fee500;
-    color: #000;
+    background-color: #ff6347;
+    color: white;
     border: none;
 
     border-radius: 8px;
@@ -117,30 +90,7 @@ export const KakaoButton = styled.button`
     transition: background-color 0.2s;
 
     &:hover {
-        background-color: #fde047;
-    }
-
-    &:active {
-        transform: translateY(1px);
-    }
-`
-
-export const JoinButton = styled.button`
-    width: 100%;
-    padding: 10px;
-    background-color: transparent;
-    color: #374151;
-    border: 1px solid #d1d5db;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-        background-color: #f9fafb;
+        background-color: #e5533d;
     }
 
     &:active {
