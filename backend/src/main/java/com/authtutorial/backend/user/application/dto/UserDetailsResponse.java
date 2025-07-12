@@ -6,13 +6,13 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class UserDetailsQuery {
+public class UserDetailsResponse {
     private long id;
     private String name;
     private String provider;
 
-    public static UserDetailsQuery from(final User user) {
-        return UserDetailsQuery.builder()
+    public static UserDetailsResponse from(final User user) {
+        return UserDetailsResponse.builder()
                 .id(user.getId())
                 .name(user.getName())
                 .provider(user.getProvider())
