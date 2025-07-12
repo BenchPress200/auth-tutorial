@@ -1,7 +1,7 @@
 package com.authtutorial.backend.user.application;
 
 import com.authtutorial.backend.user.application.dto.RegisterCommand;
-import com.authtutorial.backend.user.application.dto.UserDetailsQuery;
+import com.authtutorial.backend.user.application.dto.UserDetailsResponse;
 import com.authtutorial.backend.user.domain.entity.User;
 import com.authtutorial.backend.user.domain.exception.UserException;
 import com.authtutorial.backend.user.domain.repository.UserRepository;
@@ -39,11 +39,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDetailsQuery getUserDetails(long userId) {
+    public UserDetailsResponse getUserDetails(final long userId) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new UserException("User with [" + userId + "] not found.", HttpStatus.NOT_FOUND)
-                );
+                .orElseThrow(() -> new UserException("User with [" + userId + "] not found.", HttpStatus.NOT_FOUND));
 
-        return UserDetailsQuery.from(user);
+        return UserDetailsResponse.from(user);
     }
 }

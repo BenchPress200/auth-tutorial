@@ -1,5 +1,6 @@
 package com.authtutorial.backend.exception;
 
+import com.authtutorial.backend.auth.domain.exception.AuthException;
 import com.authtutorial.backend.user.domain.exception.UserException;
 import com.benchpress200.apiresponse.ApiResponse;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,18 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleUserException(final UserException e) {
         HttpStatus status = e.getHttpStatus();
         String message = e.getMessage();
-        
+
+        return ApiResponse.builder()
+                .status(status)
+                .message(message)
+                .build();
+    }
+
+    @ExceptionHandler(AuthException.class)
+    public ResponseEntity<?> handleAuthException(final AuthException e) {
+        HttpStatus status = e.getHttpStatus();
+        String message = e.getMessage();
+
         return ApiResponse.builder()
                 .status(status)
                 .message(message)

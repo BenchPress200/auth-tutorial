@@ -9,7 +9,7 @@
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-5.3.5-6DB33F?logo=springboot&logoColor=white)
 ![Spring Security](https://img.shields.io/badge/Security-6.2.1-6DB33F?logo=springsecurity&logoColor=white) <br>
-![JWT](https://img.shields.io/badge/JWT-1.0.0-000000?logo=jsonwebtokens&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-0.12.3-000000?logo=jsonwebtokens&logoColor=white)
 
 
 
@@ -201,8 +201,8 @@ sequenceDiagram
   ```json
   HTTP Body
   {
-    "status": 204,
-    "message": "Logout completed successfully.",
+    "status": 200,
+    "message": "Logout completed successfully",
     "data": null,
     "timestamp": "yyyy-mm-ddThh:mm:ssZ"
   }
@@ -211,7 +211,7 @@ sequenceDiagram
   HTTP Body
   {
     "status": 401,
-    "message": "Authentication failed.",
+    "message": "Authentication failed",
     "data": null,
     "timestamp": "yyyy-mm-ddThh:mm:ssZ"
   }
