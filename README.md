@@ -240,7 +240,7 @@ sequenceDiagram
     "status": 200,
     "message": "OK",
     "data": {
-      "id": number
+      "userId": number
     },
     "timestamp": "yyyy-mm-ddThh:mm:ssZ"
   } 
@@ -277,7 +277,8 @@ sequenceDiagram
     "message": "OK",
     "data": {
       "id": number,
-      "name": string
+      "name": string,
+      "provider": string,
     },
     "timestamp": "yyyy-mm-ddThh:mm:ssZ"
   } 

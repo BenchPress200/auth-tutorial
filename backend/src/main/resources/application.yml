@@ -1,10 +1,18 @@
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force-request: true
+      force-response: true
+
 spring:
   application:
     name: auth-tutorial-backend
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/auth_tutorial?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/auth_tutorial?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 1234
 
