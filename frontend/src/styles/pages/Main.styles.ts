@@ -27,7 +27,16 @@ export const ContentBox = styled.div`
     box-sizing: border-box;
 `
 
+export const Title = styled.h1`
+    margin: 0;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+`
+
 export const ResponseBox = styled.div`
+    margin-top:30px;
     width: calc(100% - 20px);
     padding: 10px;
 
@@ -38,6 +47,21 @@ export const ResponseBox = styled.div`
     font-size: 16px;
     font-weight: 600;
     line-height: 17px;
+`
+
+export const ResponseBoxItem = styled.div`
+    width: calc(100% - 10px);
+    padding: 5px;
+
+    border-radius: 5px;
+
+    white-space: nowrap;        
+    overflow: hidden;           
+    text-overflow: ellipsis;   
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 `
 
 export const ButtonBox = styled.div`
