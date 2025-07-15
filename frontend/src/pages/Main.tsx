@@ -17,31 +17,19 @@ import { useNavigation } from '../hooks/useNavigation';
 const Main = () => {
     const { handleNavigateToLogin } = useNavigation();
 
-    const [jwt, setJwt] = useState<string>('');
     const [userId, setUserId] = useState<number>(0);
     const [name, setName] = useState<string>('');
     const [provider, setProvider] = useState<string>('');
 
 
     useEffect(function init() {
-        const jwt: string|null = localStorage.getItem('Authorization');
-
-        if(!jwt) {
-            alert('[토큰없음]')
-            localStorage.clear();
-            handleNavigateToLogin();
-            return;
-        }
-
-        setJwt(jwt);
-
         const requestOptions: RequestInit = {
             method: 'GET',
             headers: {
-                'Authorization': jwt,
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
+            credentials: 'include',
         }
 
         fetch('http://localhost:8080/api/v1/auth/whoami', requestOptions)
@@ -62,7 +50,6 @@ const Main = () => {
                     timestamp: ${data.timestamp}`
                     )
                     
-                    localStorage.clear();
                     handleNavigateToLogin();
                 })
             })
@@ -77,10 +64,10 @@ const Main = () => {
         const requestOptions: RequestInit = {
             method: 'GET',
             headers: {
-                'Authorization': jwt,
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
+            credentials: 'include',
         }
 
         fetch(`http://localhost:8080/api/v1/users/${userId}`, requestOptions)
@@ -105,10 +92,10 @@ const Main = () => {
         const requestOptions: RequestInit = {
             method: 'POST',
             headers: {
-                'Authorization': jwt,
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
             },
+            credentials: 'include',
         }
 
         fetch(`http://localhost:8080/api/v1/auth/logout`, requestOptions)
@@ -135,7 +122,6 @@ const Main = () => {
             <ContentBox>
                 <Title>Request your profile !</Title>
                 <ResponseBox>
-                    <ResponseBoxItem>JWT: {jwt}</ResponseBoxItem>
                     <ResponseBoxItem>ID: {userId}</ResponseBoxItem>
                     {name &&
                     <>

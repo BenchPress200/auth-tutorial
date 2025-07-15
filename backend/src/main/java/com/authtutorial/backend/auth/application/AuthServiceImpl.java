@@ -29,7 +29,6 @@ public class AuthServiceImpl implements AuthService, UserDetailsService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserAuthQuery userAuthQuery = (UserAuthQuery) authentication.getPrincipal();
         long userId = userAuthQuery.getUserId();
-
         return UserIdQuery.of(userId);
     }
 }

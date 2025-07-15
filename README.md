@@ -39,7 +39,7 @@ sequenceDiagram
   Browser->>API Server: 로그인 요청
   API Server-->>API Server: 계정정보 인증
 
-  API Server->>Browser: 로그인 응답 (HTTP 헤더에 JWT 토큰 발급)
+  API Server->>Browser: 로그인 응답 (쿠키에 JWT 토큰 발급)
 ```
 
 <br>
@@ -159,7 +159,7 @@ sequenceDiagram
   ```
 - 응답
   ```json
-  HTTP Header
+  Cookie
   "Authorization": "Bearer {JWT}"
 
   HTTP Body
@@ -194,7 +194,7 @@ sequenceDiagram
 **로그아웃 - [POST] ```/api/v1/auth/logout```**
 - 요청<br>
   ```json
-  HTTP Header
+  Cookie
   "Authorization": "Bearer {JWT}"
   ```
 - 응답
@@ -231,7 +231,7 @@ sequenceDiagram
 **본인 아이디 조회 - [GET] ```/api/v1/auth/whoami```**
 - 요청
   ```json
-  HTTP Header
+  Cookie
   "Authorization": "Bearer {JWT}"
   ```
 - 응답
@@ -267,7 +267,7 @@ sequenceDiagram
 **회원정보 조회 - [GET] ```/api/v1/users/{userId}```**
 - 요청
   ```json
-  HTTP Header
+  Cookie
   "Authorization": "Bearer {JWT}"
   ```
 - 응답

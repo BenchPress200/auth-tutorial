@@ -14,8 +14,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedMethods("GET", "POST", "PATCH", "DELETE", "OPTIONS")
                 .allowedOrigins("http://localhost:3000")
                 .allowedHeaders("*")
-                .allowedHeaders("Authorization", "Content-Type", "Accept")
-                .exposedHeaders("Authorization")
+                .allowedHeaders("Content-Type", "Accept")
+                .exposedHeaders("Set-Cookie")
                 .allowCredentials(true)
                 .maxAge(3600); // Pre-flight 요청(OPTIONS)의 결과를 3600초(1시간) 동안 캐싱함
     }
