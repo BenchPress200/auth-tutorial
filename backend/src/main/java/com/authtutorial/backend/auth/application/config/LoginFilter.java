@@ -6,9 +6,12 @@ import com.authtutorial.backend.auth.application.dto.UserAuthQuery;
 import com.authtutorial.backend.auth.domain.AuthTokenService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -34,7 +37,6 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(name, password);
 
             return authenticationManager.authenticate(authToken);
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -52,7 +54,16 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         String role = userAuthQuery.getRole();
         String token = authTokenService.issueToken(userId, role);
 
-        response.addHeader("Authorization", token);
+        // 공백을 위한 인코딩
+        token = URLEncoder.encode(token, StandardCharsets.UTF_8);
+
+        Cookie cookie = new Cookie("Authorization", token);
+        cookie.setHttpOnly(true);
+        cookie.setSecure(true);
+        cookie.setPath("/");
+        cookie.setMaxAge(3600);
+        response.addCookie(cookie);
+
         response.setStatus(HttpServletResponse.SC_OK);
         response.setContentType("application/json");
         AuthResponse authResponse = AuthResponse.builder()
