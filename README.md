@@ -7,7 +7,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178C6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.1.8-61DAFB?logo=react&logoColor=black) <br>
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=java&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/SpringBoot-5.3.5-6DB33F?logo=springboot&logoColor=white)
+![Spring](https://img.shields.io/badge/Spring-5.3.5-6DB33F?logo=springboot&logoColor=white)
 ![Spring Security](https://img.shields.io/badge/Security-6.2.1-6DB33F?logo=springsecurity&logoColor=white) <br>
 ![JWT](https://img.shields.io/badge/JWT-0.12.3-000000?logo=jsonwebtokens&logoColor=white)
 
